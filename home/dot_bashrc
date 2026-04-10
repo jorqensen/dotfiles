@@ -72,6 +72,9 @@ export FZF_DEFAULT_OPTS="--style full"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # ── Tool init (keep last) ─────────────────────────────────────────────────────
 
 eval "$(fzf --bash)"
