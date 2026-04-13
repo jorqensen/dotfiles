@@ -2,21 +2,31 @@
 
 My dotfiles managed with [Chezmoi](https://www.chezmoi.io/)
 
-# Usage
-
-Install Chezmoi and initalize the dotfiles:
+## Installation
 
 ```bash
-$ sh -c "$(curl -fsLS get.chezmoi.io/lb)"
-$ chezmoi init https://github.com/jorqensen/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply jorqensen
 ```
 
-> [!TIP]
-> It is possible to install and initialize the dotfiles in a single command
+> [!NOTE]
+> This will install chezmoi to `$HOME/.local/bin` and apply the dotfiles in one swoop. Please refer to the official [Chezmoi documentation](https://www.chezmoi.io/) to understand installation and usage.
 
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply $GITHUB_USERNAME
-```
+> [!WARNING]
+> These dotfiles *heavily assumes* you're running WSL2 with Debian/Ubuntu. Please apply with caution in other environments.
 
-> [!IMPORTANT]
-> The above installs Chezmoi in .local/bin as opposed to ./bin - omit /lb from the URL to avoid this.
+## How it works
+
+When you first initialize these dotfiles, you will be prompted to install optional tools such as `lazygit`. The configuration will get saved to `$HOME/.config/chezmoi/chezmoi.toml`. The config will then be parsed and install the selected tools, using the [install-optional.sh](home/.chezmoiscripts/run_onchange_before_install-optional.sh.tmpl) script.
+
+## Tools
+
+- [Fish](https://github.com/fish-shell/fish-shell)
+- [Starship](https://github.com/starship/starship)
+- [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [FZF](https://github.com/junegunn/fzf)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep)
+- [Eza](https://github.com/eza-community/eza)
+- [Just](https://github.com/casey/just)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
+- [Lazydocker](https://github.com/jesseduffield/lazydocker)
+- [Wishlist](https://github.com/charmbracelet/wishlist)
