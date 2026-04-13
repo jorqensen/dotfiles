@@ -1,5 +1,5 @@
 format = """
-\\[$username$hostname\\]-\\[$directory\\]-\\[$time\\]$git_branch$git_status$status
+\\[$shell\\]-\\[$username$hostname\\]-\\[$directory\\]-\\[$time\\]$git_branch$git_status$status
 $character"""
 
 add_newline = false
@@ -12,13 +12,19 @@ success_symbol = "λ"
 error_symbol = "[λ](bold red)"
 vimcmd_symbol = "[λ](dimmed green)"
 
+[shell]
+disabled = false
+format = "[$indicator]($style)"
+style = "blue bold"
+
 [username]
 show_always = true
 format = "[$user](bold green)"
 
 [hostname]
 ssh_only = false
-format = "[@$hostname](bold green)"
+format = "[@$hostname$ssh_symbol](bold green)"
+ssh_symbol = "|ssh"
 
 [directory]
 format = "[$path](bold cyan)"
