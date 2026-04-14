@@ -19,14 +19,6 @@ if ! command -v fish &> /dev/null; then
     sudo apt install -y fish
 fi
 
-# Micro — a modern terminal-based text editor | https://github.com/micro-editor/micro
-if ! command -v micro &> /dev/null; then
-    MICRO_VERSION=$(curl -s "https://api.github.com/repos/micro-editor/micro/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-    curl -LO "https://github.com/micro-editor/micro/releases/latest/download/micro-${MICRO_VERSION}-linux64.tar.gz"
-    tar xf "micro-${MICRO_VERSION}-linux64.tar.gz" --strip-components=1 -C "$LOCAL_BIN" "micro-${MICRO_VERSION}/micro"
-    rm "micro-${MICRO_VERSION}-linux64.tar.gz"
-fi
-
 # Starship — Custom prompt | https://github.com/starship/starship
 if ! command -v starship &> /dev/null; then
     curl -sS https://starship.rs/install.sh | sh
@@ -45,6 +37,14 @@ if ! command -v fzf &> /dev/null; then
     rm "fzf-${FZF_VERSION}-linux_amd64.tar.gz"
 fi
 
+# Eza — A modern alternative to ls | https://github.com/eza-community/eza
+if ! command -v eza &> /dev/null; then
+    EZA_VERSION=$(curl -s "https://api.github.com/repos/eza-community/eza/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+    curl -LO "https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz"
+    tar xf "eza_x86_64-unknown-linux-gnu.tar.gz" -C "$LOCAL_BIN"
+    rm "eza_x86_64-unknown-linux-gnu.tar.gz"
+fi
+
 # RG — An alternative to grep written in Rust | https://github.com/burntsushi/ripgrep
 if ! command -v rg &> /dev/null; then
     RG_VERSION=$(curl -s "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest" | grep -Po '"tag_name": "\K[0-9.]+')
@@ -53,10 +53,10 @@ if ! command -v rg &> /dev/null; then
     rm "ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl.tar.gz"
 fi
 
-# Eza — A modern alternative to ls | https://github.com/eza-community/eza
-if ! command -v eza &> /dev/null; then
-    EZA_VERSION=$(curl -s "https://api.github.com/repos/eza-community/eza/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-    curl -LO "https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz"
-    tar xf "eza_x86_64-unknown-linux-gnu.tar.gz" -C "$LOCAL_BIN"
-    rm "eza_x86_64-unknown-linux-gnu.tar.gz"
+# Gum — a tool for glamorous shell scripts | https://github.com/charmbracelet/gum
+if ! command -v gum &> /dev/null; then
+    GUM_VERSION=$(curl -s "https://api.github.com/repos/charmbracelet/gum/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+    curl -LO "https://github.com/charmbracelet/gum/releases/latest/download/gum_${GUM_VERSION}_Linux_x86_64.tar.gz"
+    tar xf "gum_${GUM_VERSION}_Linux_x86_64.tar.gz" --strip-components=1 -C "$LOCAL_BIN" "gum_${GUM_VERSION}_Linux_x86_64/gum"
+    rm "gum_${GUM_VERSION}_Linux_x86_64.tar.gz"
 fi
