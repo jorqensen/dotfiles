@@ -2,12 +2,12 @@
 
 # Gum
 if command -v gum &> /dev/null; then
-    gum completion fish > "$HOME/fish/completions/gum.fish"
+    gum completion fish > "$HOME/.config/fish/completions/gum.fish"
 fi
 
 # Starship
 if command -v gum &> /dev/null; then
-    starship completions fish > "$HOME/fish/completions/gum.fish"
+    starship completions fish > "$HOME/.config/fish/completions/gum.fish"
 fi
 
 # Ripgrep
