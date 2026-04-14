@@ -1,9 +1,0 @@
-{{- $optionals := promptMultichoice "Select optional tools to install" (list "deno" "bun" "lazygit" "lazydocker" "wishlist" "just") (list) -}}
-
-[data]
-    install_deno = {{ has "deno" $optionals }}
-    install_bun = {{ has "bun" $optionals }}
-    install_lazygit = {{ has "lazygit" $optionals }}
-    install_lazydocker = {{ has "lazydocker" $optionals }}
-    install_wishlist = {{ has "wishlist" $optionals }}
-    install_just = {{ has "just" $optionals }}
