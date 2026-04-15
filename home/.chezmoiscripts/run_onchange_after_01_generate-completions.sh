@@ -11,7 +11,7 @@ fi
 
 # Starship
 if command -v gum &> /dev/null; then
-    starship completions fish > "$HOME/.config/fish/completions/gum.fish"
+    starship completions fish > "$HOME/.config/fish/completions/starship.fish"
 fi
 
 # Ripgrep
