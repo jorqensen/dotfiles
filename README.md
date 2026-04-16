@@ -49,6 +49,10 @@ Completions for the core packages will be generated and placed in `$HOME/.config
 | [Lazydocker](https://github.com/jesseduffield/lazydocker) | Optional | `install-lazydocker` |
 | [Wishlist](https://github.com/charmbracelet/wishlist) | Optional | `install-wishlist` |
 | [Micro](https://github.com/micro-editor/micro) | Optional | `install-micro` |
+| [FFmpeg](https://github.com/BtbN/FFmpeg-Builds) | Optional | `install-ffmpeg` |
+| [GoReleaser](https://github.com/goreleaser/goreleaser) | Optional | `install-goreleaser` |
+| [ttyd](https://github.com/tsl0922/ttyd) | Optional | `install-ttyd` |
+| [VHS](https://github.com/charmbracelet/vhs) | Optional | `install-vhs` |
 
 > [!NOTE]
 > Optional packages and their respective installation scripts are only available in the `fish` shell.
