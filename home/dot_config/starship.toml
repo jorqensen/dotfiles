@@ -23,8 +23,8 @@ format = "[$user](bold green)"
 
 [hostname]
 ssh_only = false
-format = "[@$hostname$ssh_symbol](bold green)"
-ssh_symbol = "|ssh"
+format = "[@$hostname](bold green)[$ssh_symbol](bold red)"
+ssh_symbol = "\\(ssh\\)"
 
 [directory]
 format = "[$path](bold cyan)"
