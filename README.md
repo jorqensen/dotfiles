@@ -53,6 +53,7 @@ Completions for the core packages will be generated and placed in `$HOME/.config
 | [GoReleaser](https://github.com/goreleaser/goreleaser) | Optional | `install-goreleaser` |
 | [ttyd](https://github.com/tsl0922/ttyd) | Optional | `install-ttyd` |
 | [VHS](https://github.com/charmbracelet/vhs) | Optional | `install-vhs` |
+| [JQ](https://github.com/jqlang/jq) | Optional | `install-jq` |
 
 > [!NOTE]
 > Optional packages and their respective installation scripts are only available in the `fish` shell.
